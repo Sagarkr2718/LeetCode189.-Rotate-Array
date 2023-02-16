@@ -1,0 +1,18 @@
+class Solution {
+    public void reverseRange(int [] nums , int r1 , int r2){
+        while(r1<r2){
+            int t = nums[r1];
+            nums[r1]=nums[r2];
+            nums[r2]=t;
+            r1++;
+            r2--;
+        }
+    }
+    public void rotate(int[] nums, int k) {
+        int n = nums.length;
+        int j = k%n;
+        reverseRange(nums , 0, n-1);
+        reverseRange(nums , 0, j-1);
+        reverseRange(nums , j, n-1);    
+    }
+}
